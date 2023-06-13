@@ -29,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
 //        WebSettings webSettings = webView.getSettings();
 //        webSettings.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
 
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
+
         // 주소창 없애기
         webView.setWebViewClient(new WebViewClient(){
             @Override
@@ -40,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
 
         webView.loadUrl("http://www.tbooke.kr");
         webView.getSettings().setJavaScriptEnabled(true);
+        webSettings.setDomStorageEnabled(true); // DOM Storage 활성화
+        webSettings.setLoadWithOverviewMode(true); // 전체 페이지를 보여주는 모드
+        webSettings.setUseWideViewPort(true); // Wide Viewport 사용
     }
 
     @Override
